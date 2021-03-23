@@ -575,8 +575,9 @@ class DesktopPlayer extends Player{
 				$pk->clientData["SkinId"] = $this->bigBrother_formattedUUID."_Custom";
 				$pk->clientData["SkinResourcePatch"] = base64_encode(json_encode(["geometry" => ["default" => "geometry.humanoid.custom"]]));
 			}
-
+         
 			$skin = new SkinImage($skinImage);
+			$pk->clientData["PlayFabId"] = "8a6bfa18-cfdd-46aa-a479-56b194cda178";
 			$pk->clientData["SkinData"] = $skin->getSkinImageData(true);
 			$skinSize = $this->getSkinImageSize(strlen($skin->getRawSkinImageData(true)));
 			$pk->clientData["SkinImageHeight"] = $skinSize[0];
